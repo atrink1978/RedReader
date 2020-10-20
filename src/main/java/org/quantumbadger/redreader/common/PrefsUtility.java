@@ -580,7 +580,7 @@ public final class PrefsUtility {
 			final SharedPreferences sharedPreferences) {
 		return getBoolean(
 				R.string.pref_appearance_comments_show_floating_toolbar_key,
-				true,
+				false,
 				context,
 				sharedPreferences);
 	}
@@ -746,11 +746,7 @@ public final class PrefsUtility {
 	public static boolean pref_behaviour_useinternalbrowser(
 			final Context context,
 			final SharedPreferences sharedPreferences) {
-		return getBoolean(
-				R.string.pref_behaviour_useinternalbrowser_key,
-				true,
-				context,
-				sharedPreferences);
+		return false;
 	}
 
 	public static boolean pref_behaviour_usecustomtabs(
@@ -989,7 +985,7 @@ public final class PrefsUtility {
 			final SharedPreferences sharedPreferences) {
 		return SelfpostAction.valueOf(StringUtils.asciiUppercase(getString(
 				R.string.pref_behaviour_self_post_tap_actions_key,
-				"collapse",
+				"nothing",
 				context,
 				sharedPreferences)));
 	}
