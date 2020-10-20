@@ -33,19 +33,10 @@ jobs:
 
             -   name: Run release build
                 run: ./gradlew assembleRelease
-
-    buildDebug:
-        name: Debug build
-        runs-on: ubuntu-latest
-
-        steps:
-            -   uses: actions/checkout@v2
-
-            -   name: Run debug build
-                run: ./gradlew assembleDebug
-
-            -   name: Upload artifact to GitHub
+            
+            -   name: Upload
                 uses: actions/upload-artifact@v2
                 with:
-                    name: RedReader-debug.apk
-                    path: build/outputs/apk/debug/RedReader-debug.apk
+                    name: RedReader-release.apk
+                    path: build/outputs/apk/RedReader-release.apk
+                
