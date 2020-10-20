@@ -35,8 +35,8 @@ jobs:
                 run: ./gradlew assembleRelease
             
             -   name: Upload
-                uses: actions/upload-artifact@v2
+                uses: actions/create-release@v1
                 with:
-                    name: RedReader-release.apk
-                    path: build/outputs/apk/RedReader-release.apk
-                
+                    tag_name: ${{ github.ref }}
+                    release_name: Release ${{ github.ref }}
+
