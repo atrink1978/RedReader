@@ -24,16 +24,21 @@ jobs:
             -   name: Run checkstyle
                 run: ./gradlew checkstyle
 
-    buildRelease:
-        name: Release build
+
+    buildDebug:
+        name: Debug build
         runs-on: ubuntu-latest
 
         steps:
             -   uses: actions/checkout@v2
 
-            -   name: Run release build
+            -   name: Run debug build
                 run: ./gradlew assembleRelease
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
 
-
+            -   name: Upload artifact to GitHub
+                uses: actions/create-release@v1
+                with:
+                    name: RedReader-debug.apk
+                    path: build/outputs/apk/debug/RedReader-debug.apk
