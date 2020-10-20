@@ -36,7 +36,7 @@
                  android:largeHeap="true"
                  android:hardwareAccelerated="true"
                  android:allowBackup="true"
-				 android:usesCleartextTraffic="true"
+				 android:usesCleartextTraffic="false"
 				 tools:ignore="UnusedAttribute">
 		<meta-data android:name="android.max_aspect" android:value="3" />
 
